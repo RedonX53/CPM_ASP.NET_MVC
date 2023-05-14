@@ -1,26 +1,26 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Identity.Models;
+
 
 namespace Identity.Models
 {
-
     public class AppIdentityDbContext : IdentityDbContext<AppUser>
     {
         public AppIdentityDbContext(DbContextOptions<AppIdentityDbContext> options) : base(options) { }
-        //public DbSet<Company> Companies { get; set; }
-        //public DbSet<Ledgers> Ledgers { get; set; }
-        //public DbSet<Stock> Stocks { get; set; }
-        //public DbSet<Item> Items { get; set; }
-        //public DbSet<Employee> Employees { get; set; }
-        //public DbSet<EmployeeInfo> EmployeesInfo { get; set; }
-        //public DbSet<OldEmployeeInfo> OldEmployeesInfo { get; set; }
+        public DbSet<User>? User { get; set; }
+        public DbSet<Report>? Reports { get; set; }
+
+        public DbSet<ManagerAuthority>? ManagerAuthorities { get; set; }
+        public DbSet<EngineerSupervisor>? EngineerSupervisors { get; set; }
+        public DbSet<Customer>? Customers { get; set; }
+        public DbSet<Project>? Projects { get; set; }
+        public DbSet<Approval>? Approvals { get; set; }
+        public DbSet<Stage>? Stages { get; set; }
+        public DbSet<Tasks>? Tasks { get; set; }
+        public DbSet<Cost>? Costs { get; set; }
+        public DbSet<Payment>? Payments { get; set; }
+        public DbSet<Quote>? Quotes { get; set; }
+        
     }
-
-
-
-
 
 }
